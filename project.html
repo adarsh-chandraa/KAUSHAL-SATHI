@@ -1,0 +1,1870 @@
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>कौशल साथी | Kaushaal Saathi</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Mukta:wght@400;600;700;800&family=Yatra+One&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --red: #C0392B;
+            --red-dark: #922B21;
+            --red-light: #E74C3C;
+            --red-pale: #FDEDEC;
+            --white: #FFFFFF;
+            --off-white: #FEF9F9;
+            --cream: #FDF6F6;
+            --gray: #888;
+            --text: #2C0A0A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Mukta', sans-serif;
+            background: var(--off-white);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* ---- NAV ---- */
+        nav {
+            background: var(--red);
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 3px 15px rgba(192, 57, 43, 0.4);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 0;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .logo-text h1 {
+            font-family: 'Yatra One', cursive;
+            color: white;
+            font-size: 22px;
+            line-height: 1;
+        }
+
+        .logo-text span {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        nav ul a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        nav ul a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .nav-cta {
+            background: white !important;
+            color: var(--red) !important;
+            font-weight: 700 !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--cream) !important;
+        }
+
+        /* ---- HERO ---- */
+        .hero {
+            position: relative;
+            min-height: 92vh;
+            background: linear-gradient(135deg, var(--red-dark) 0%, var(--red) 50%, var(--red-light) 100%);
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding: 5% 5%;
+        }
+
+        .hero-bg-pattern {
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 40%);
+        }
+
+        .hero-shapes {
+            position: absolute;
+            right: -80px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 600px;
+            height: 600px;
+            opacity: 0.07;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 650px;
+            animation: fadeUp 0.9s ease both;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+            backdrop-filter: blur(8px);
+        }
+
+        .hero h2 {
+            font-family: 'Yatra One', cursive;
+            color: white;
+            font-size: clamp(36px, 5vw, 64px);
+            line-height: 1.15;
+            margin-bottom: 12px;
+        }
+
+        .hero h2 .highlight {
+            color: #FFD9D9;
+            display: block;
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 36px;
+            max-width: 520px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--red);
+            font-family: 'Mukta', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 14px 32px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            font-family: 'Mukta', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 14px 32px;
+            border-radius: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            border-color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-stats {
+            position: absolute;
+            right: 5%;
+            bottom: 10%;
+            display: flex;
+            gap: 24px;
+            animation: fadeUp 1.1s 0.3s ease both;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 16px;
+            padding: 20px 28px;
+            text-align: center;
+            color: white;
+        }
+
+        .stat-card .num {
+            font-family: 'Yatra One', cursive;
+            font-size: 32px;
+            display: block;
+        }
+
+        .stat-card .lbl {
+            font-size: 12px;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ---- SEARCH ---- */
+        .search-section {
+            background: white;
+            padding: 50px 5%;
+            box-shadow: 0 4px 20px rgba(192, 57, 43, 0.08);
+        }
+
+        .search-section h3 {
+            text-align: center;
+            font-family: 'Yatra One', cursive;
+            color: var(--red);
+            font-size: 28px;
+            margin-bottom: 24px;
+        }
+
+        .search-bar {
+            display: flex;
+            max-width: 760px;
+            margin: 0 auto;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .search-bar select,
+        .search-bar input {
+            flex: 1;
+            min-width: 180px;
+            padding: 14px 18px;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            font-family: 'Mukta', sans-serif;
+            font-size: 15px;
+            color: var(--text);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-bar select:focus,
+        .search-bar input:focus {
+            border-color: var(--red);
+        }
+
+        .search-bar button {
+            background: var(--red);
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 10px;
+            font-family: 'Mukta', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .search-bar button:hover {
+            background: var(--red-dark);
+        }
+
+        /* ---- SECTION COMMON ---- */
+        section {
+            padding: 70px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-family: 'Yatra One', cursive;
+            color: var(--red);
+            font-size: clamp(28px, 4vw, 42px);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            font-size: 17px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* ---- SERVICES ---- */
+        #services {
+            background: var(--cream);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            padding: 28px 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.25s;
+            border: 2px solid transparent;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .service-card:hover {
+            border-color: var(--red);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(192, 57, 43, 0.15);
+        }
+
+        .service-icon {
+            font-size: 42px;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .service-card h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+
+        .service-card span {
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        /* ---- WORKERS ---- */
+        .workers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .worker-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+            transition: all 0.25s;
+            border: 1px solid #f0e0e0;
+        }
+
+        .worker-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 1 12px 40px rgba(192, 57, 43, 0.15);
+        }
+
+        .worker-header {
+            background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .worker-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            border: 3px solid rgba(255, 255, 255, 0.5);
+            flex-shrink: 0;
+        }
+
+        .worker-meta h4 {
+            color: white;
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .worker-meta .job {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 13px;
+        }
+
+        .worker-body {
+            padding: 20px;
+        }
+
+        .worker-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+        }
+
+        .tag {
+            background: var(--red-pale);
+            color: var(--red);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        .worker-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .rating {
+            color: #E67E22;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .price {
+            color: var(--red);
+            font-weight: 800;
+            font-size: 18px;
+        }
+
+        .price span {
+            font-size: 12px;
+            color: var(--gray);
+            font-weight: 400;
+        }
+
+        .worker-location {
+            font-size: 13px;
+            color: var(--gray);
+            margin-bottom: 16px;
+        }
+
+        .btn-hire {
+            width: 100%;
+            background: var(--red);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            font-family: 'Mukta', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-hire:hover {
+            background: var(--red-dark);
+        }
+
+        /* ---- HOW IT WORKS ---- */
+        #how {
+            background: var(--cream);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .step {
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+        }
+
+        .step-num {
+            width: 60px;
+            height: 60px;
+            background: var(--red);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Yatra One', cursive;
+            font-size: 24px;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 20px rgba(192, 57, 43, 0.35);
+        }
+
+        .step h4 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .step p {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* ---- REGISTER ---- */
+        .register-section {
+            background: linear-gradient(135deg, var(--red-dark), var(--red));
+            padding: 70px 5%;
+            text-align: center;
+            color: white;
+        }
+
+        .register-section h2 {
+            font-family: 'Yatra One', cursive;
+            font-size: clamp(28px, 4vw, 42px);
+            margin-bottom: 12px;
+        }
+
+        .register-section p {
+            opacity: 0.85;
+            font-size: 17px;
+            margin-bottom: 36px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .register-cards {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .reg-card {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 36px 32px;
+            flex: 1;
+            min-width: 240px;
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+
+        .reg-card:hover {
+            background: rgba(255, 255, 255, 0.22);
+            transform: translateY(-4px);
+        }
+
+        .reg-card .ico {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .reg-card h3 {
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .reg-card p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* ---- FOOTER ---- */
+        footer {
+            background: #1A0606;
+            color: rgba(255, 255, 255, 0.75);
+            padding: 50px 5% 28px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto 40px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Yatra One', cursive;
+            color: white;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        footer h4 {
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 8px;
+        }
+
+        footer ul li a {
+            color: rgba(255, 255, 255, 0.65);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        footer ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 24px;
+            text-align: center;
+            font-size: 13px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ---- MODAL ---- */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: white;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 480px;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: modalIn 0.3s ease;
+        }
+
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--red), var(--red-dark));
+            padding: 24px 28px;
+            border-radius: 20px 20px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            color: white;
+            font-size: 20px;
+            font-family: 'Yatra One', cursive;
+        }
+
+        .modal-close {
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            line-height: 1;
+            opacity: 0.8;
+        }
+
+        .modal-close:hover {
+            opacity: 1;
+        }
+
+        .modal-body {
+            padding: 28px;
+        }
+
+        .worker-summary {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px;
+            background: var(--cream);
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+
+        .worker-summary .avatar {
+            font-size: 36px;
+        }
+
+        .worker-summary h4 {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .worker-summary span {
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            font-family: 'Mukta', sans-serif;
+            font-size: 15px;
+            color: var(--text);
+            outline: none;
+            transition: border-color 0.2s;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--red);
+        }
+
+        .price-summary {
+            background: var(--red-pale);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .price-row.total {
+            border-top: 1px dashed var(--red);
+            padding-top: 10px;
+            margin-top: 4px;
+            font-weight: 700;
+            color: var(--red);
+            font-size: 16px;
+        }
+
+        /* PAYMENT MODAL */
+        .payment-methods {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .pay-method {
+            border: 2px solid #eee;
+            border-radius: 12px;
+            padding: 14px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .pay-method:hover,
+        .pay-method.active {
+            border-color: var(--red);
+            background: var(--red-pale);
+            color: var(--red);
+        }
+
+        .pay-method .pay-ico {
+            font-size: 28px;
+            margin-bottom: 6px;
+        }
+
+        .upi-input {
+            display: none;
+        }
+
+        .upi-input.visible {
+            display: block;
+        }
+
+        .card-fields {
+            display: none;
+        }
+
+        .card-fields.visible {
+            display: block;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .success-state {
+            text-align: center;
+            padding: 40px 20px;
+            display: none;
+        }
+
+        .success-state.visible {
+            display: block;
+        }
+
+        .success-ico {
+            font-size: 64px;
+            margin-bottom: 16px;
+        }
+
+        .success-state h3 {
+            color: var(--red);
+            font-family: 'Yatra One', cursive;
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        .success-state p {
+            color: var(--gray);
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .btn-full {
+            width: 100%;
+            background: var(--red);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 10px;
+            font-family: 'Mukta', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-full:hover {
+            background: var(--red-dark);
+        }
+
+        .divider {
+            height: 1px;
+            background: #eee;
+            margin: 20px 0;
+        }
+
+        /* REGISTER MODAL */
+        .reg-tabs {
+            display: flex;
+            gap: 0;
+            margin-bottom: 24px;
+            border: 2px solid var(--red);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .reg-tab {
+            flex: 1;
+            padding: 11px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            background: white;
+            color: var(--red);
+            border: none;
+            font-family: 'Mukta', sans-serif;
+            transition: all 0.2s;
+        }
+
+        .reg-tab.active {
+            background: var(--red);
+            color: white;
+        }
+
+        /* SCROLL animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Announcement banner */
+        .banner {
+            background: var(--red-dark);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .banner span {
+            color: #FFD9D9;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero-stats {
+                display: none;
+            }
+
+            nav ul {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Banner -->
+    <div class="banner">🌾 <span>ग्राम स्तर पर कुशल कारीगर अब आपके हाथ में</span> — Skilled Workers for Every Village
+        Home 🏡</div>
+
+    <!-- NAV -->
+    <nav>
+        <a href="#" class="logo">
+            <div class="logo-icon">🛠️</div>
+            <div class="logo-text">
+                <h1>कौशल साथी</h1>
+                <span>Kaushaal Saathi</span>
+            </div>
+        </a>
+        <ul>
+            <li><a href="#services">सेवाएं</a></li>
+            <li><a href="#workers">कारीगर</a></li>
+            <li><a href="#how">कैसे काम करे</a></li>
+            <li><a href="#" onclick="openRegisterModal()">Login</a></li>
+            <li><a href="#" class="nav-cta" onclick="openRegisterModal()">Register Free</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg-pattern"></div>
+        <svg class="hero-shapes" viewBox="0 0 600 600" fill="white">
+            <circle cx="300" cy="300" r="280" stroke="white" stroke-width="2" fill="none" />
+            <circle cx="300" cy="300" r="200" stroke="white" stroke-width="2" fill="none" />
+            <circle cx="300" cy="300" r="120" stroke="white" stroke-width="2" fill="none" />
+            <polygon points="300,40 560,400 40,400" stroke="white" stroke-width="2" fill="none" />
+            <rect x="100" y="100" width="400" height="400" rx="20" stroke="white" stroke-width="1.5" fill="none"
+                transform="rotate(15 300 300)" />
+        </svg>
+
+        <div class="hero-content">
+            <div class="hero-badge">🏆 भारत का नंबर 1 ग्रामीण रोजगार मंच</div>
+            <h2>
+                घर बैठे पाएं
+                <span class="highlight">कुशल कारीगर!</span>
+            </h2>
+            <p>प्लम्बर, बढ़ई, इलेक्ट्रीशियन और अन्य कारीगर अब बस एक क्लिक दूर। ग्रामीण युवाओं को रोजगार और परिवारों को
+                भरोसेमंद सेवा।</p>
+            <div class="hero-btns">
+                <a href="#workers" class="btn-primary">🔍 कारीगर ढूंढें</a>
+                <a href="#" class="btn-secondary" onclick="openRegisterModal(); return false">👷 कारीगर बनें</a>
+            </div>
+        </div>
+
+        <div class="hero-stats">
+            <div class="stat-card">
+                <span class="num">12K+</span>
+                <span class="lbl">कारीगर</span>
+            </div>
+            <div class="stat-card">
+                <span class="num">800+</span>
+                <span class="lbl">गाँव</span>
+            </div>
+            <div class="stat-card">
+                <span class="num">98%</span>
+                <span class="lbl">संतुष्टि</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEARCH -->
+    <div class="search-section">
+        <h3>🔍 अभी सेवा खोजें — Search a Service</h3>
+        <div class="search-bar">
+            <select>
+                <option>सेवा चुनें (Service)</option>
+                <option>Plumber — प्लम्बर</option>
+                <option>Carpenter — बढ़ई</option>
+                <option>Electrician — इलेक्ट्रीशियन</option>
+                <option>Painter — पेंटर</option>
+                <option>Mason — राजमिस्त्री</option>
+                <option>Welder — वेल्डर</option>
+            </select>
+            <input type="text" placeholder="अपना गाँव / जिला लिखें...">
+            <button>खोजें 🔍</button>
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <div class="section-title fade-in">
+            <h2>हमारी सेवाएं — Our Services</h2>
+            <p>घर, खेत, और दुकान के लिए सभी जरूरी सेवाएं एक जगह</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <span class="service-icon">🔧</span>
+                <h4>Plumber</h4>
+                <span>प्लम्बर</span>
+            </div>
+            <div class="service-card fade-in">
+                <span class="service-icon">🪚</span>
+                <h4>Carpenter</h4>
+                <span>बढ़ई</span>
+            </div>
+            <div class="service-card fade-in">
+                <span class="service-icon">⚡</span>
+                <h4>Electrician</h4>
+                <span>इलेक्ट्रीशियन</span>
+            </div>
+            <div class="service-card fade-in">
+                <span class="service-icon">🖌️</span>
+                <h4>Painter</h4>
+                <span>पेंटर</span>
+            </div>
+            <div class="service-card fade-in">
+                <span class="service-icon">🧱</span>
+                <h4>Mason</h4>
+                <span>राजमिस्त्री</span>
+            </div>
+            <div class="service-card fade-in">
+                <span class="service-icon">🌾</span>
+                <h4>Farm Help</h4>
+                <span>खेत मजदूर</span>
+            </div>
+            <div class="service-card fade-in">
+                <span class="service-icon">🔩</span>
+                <h4>Welder</h4>
+                <span>वेल्डर</span>
+            </div>
+            <div class="service-card fade-in">
+                <span class="service-icon">🏠</span>
+                <h4>House Help</h4>
+                <span>घरेलू सहायक</span>
+            </div>
+            <div class="service-card fade-in">
+                <span class="service-icon">🚿</span>
+                <h4>Cleaner</h4>
+                <span>सफाईकर्मी</span>
+            </div>
+            <div class="service-card fade-in">
+                <span class="service-icon">🌳</span>
+                <h4>Gardener</h4>
+                <span>माली</span>
+            </div>
+            <div class="service-card fade-in">
+                <span class="service-icon">🚗</span>
+                <h4>Driver</h4>
+                <span>चालक</span>
+            </div>
+            <div class="service-card fade-in">
+                <span class="service-icon">📱</span>
+                <h4>Mobile Repair</h4>
+                <span>मोबाइल मरम्मत</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORKERS -->
+    <section id="workers">
+        <div class="section-title fade-in">
+            <h2>हमारे कारीगर — Top Workers</h2>
+            <p>सत्यापित, भरोसेमंद और अनुभवी कारीगर आपकी सेवा में</p>
+        </div>
+        <div class="workers-grid" id="workers-grid">
+
+            <div class="worker-card fade-in">
+                <div class="worker-header">
+                    <div class="worker-avatar">👨‍🔧</div>
+                    <div class="worker-meta">
+                        <h4>Ramesh Kumar</h4>
+                        <div class="job">🔧 Plumber — प्लम्बर</div>
+                    </div>
+                </div>
+                <div class="worker-body">
+                    <div class="worker-tags">
+                        <span class="tag">Pipe Fitting</span>
+                        <span class="tag">Bore Well</span>
+                        <span class="tag">Leakage Fix</span>
+                    </div>
+                    <div class="worker-info">
+                        <span class="rating">⭐ 4.8 (120 jobs)</span>
+                        <span class="price">₹350<span>/घंटा</span></span>
+                    </div>
+                    <div class="worker-location">📍 Rampur Village, Sitapur, UP</div>
+                    <button class="btn-hire" onclick="openBookModal('Ramesh Kumar','Plumber','350')">अभी बुक करें — Book
+                        Now</button>
+                </div>
+            </div>
+
+            <div class="worker-card fade-in">
+                <div class="worker-header">
+                    <div class="worker-avatar">👨‍🏭</div>
+                    <div class="worker-meta">
+                        <h4>Suresh Mistri</h4>
+                        <div class="job">🪚 Carpenter — बढ़ई</div>
+                    </div>
+                </div>
+                <div class="worker-body">
+                    <div class="worker-tags">
+                        <span class="tag">Furniture</span>
+                        <span class="tag">Door/Window</span>
+                        <span class="tag">Roof Work</span>
+                        <!-- <span class="tag">Flooring</span> -->
+                    </div>
+                    <div class="worker-info">
+                        <span class="rating">⭐ 4.9 (85 jobs)</span>
+                        <span class="price">₹450<span>/घंटा</span></span>
+                    </div>
+                    <div class="worker-location">📍 Khaira Gram, Barabanki, UP</div>
+                    <button class="btn-hire" onclick="openBookModal('Suresh Mistri','Carpenter','450')">अभी बुक करें —
+                        Book Now</button>
+                </div>
+            </div>
+
+            <div class="worker-card fade-in">
+                <div class="worker-header">
+                    <div class="worker-avatar">👩‍🔧</div>
+                    <div class="worker-meta">
+                        <h4>Sunita Devi</h4>
+                        <div class="job">🏠 House Help — घरेलू सहायिका</div>
+                    </div>
+                </div>
+                <div class="worker-body">
+                    <div class="worker-tags">
+                        <span class="tag">Cooking</span>
+                        <span class="tag">Cleaning</span>
+                        <span class="tag">Child Care</span>
+                    </div>
+                    <div class="worker-info">
+                        <span class="rating">⭐ 5.0 (200 jobs)</span>
+                        <span class="price">₹250<span>/घंटा</span></span>
+                    </div>
+                    <div class="worker-location">📍 Parbatta, khagaria, Bihar</div>
+                    <button class="btn-hire" onclick="openBookModal('Sunita Devi','House Help','250')">अभी बुक करें —
+                        Book Now</button>
+                </div>
+            </div>
+
+            <div class="worker-card fade-in">
+                <div class="worker-header">
+                    <div class="worker-avatar">👨‍🔦</div>
+                    <div class="worker-meta">
+                        <h4>Manoj Bijli</h4>
+                        <div class="job">⚡ Electrician — इलेक्ट्रीशियन</div>
+                    </div>
+                </div>
+                <div class="worker-body">
+                    <div class="worker-tags">
+                        <span class="tag">Wiring</span>
+                        <span class="tag">Solar Panel</span>
+                        <span class="tag">Motor Pump</span>
+                    </div>
+                    <div class="worker-info">
+                        <span class="rating">⭐ 4.7 (160 jobs)</span>
+                        <span class="price">₹400<span>/घंटा</span></span>
+                    </div>
+                    <div class="worker-location">📍 Sirajpur, khagaria, Bihar</div>
+                    <button class="btn-hire" onclick="openBookModal('Manoj Bijli','Electrician','400')">अभी बुक करें —
+                        Book Now</button>
+                </div>
+            </div>
+
+            <div class="worker-card fade-in">
+                <div class="worker-header">
+                    <div class="worker-avatar">👨‍🎨</div>
+                    <div class="worker-meta">
+                        <h4>Deepak Rang</h4>
+                        <div class="job">🖌️ Painter — पेंटर</div>
+                    </div>
+                </div>
+                <div class="worker-body">
+                    <div class="worker-tags">
+                        <span class="tag">Wall Paint</span>
+                        <span class="tag">Texture</span>
+                        <span class="tag">Waterproof</span>
+                    </div>
+                    <div class="worker-info">
+                        <span class="rating">⭐ 4.6 (95 jobs)</span>
+                        <span class="price">₹300<span>/घंटा</span></span>
+                    </div>
+                    <div class="worker-location">📍 Kanhaiyachak, khagaria, Bihar</div>
+                    <button class="btn-hire" onclick="openBookModal('Deepak Rang','Painter','300')">अभी बुक करें — Book
+                        Now</button>
+                </div>
+            </div>
+
+            <div class="worker-card fade-in">
+                <div class="worker-header">
+                    <div class="worker-avatar">👨‍⚕️</div>
+                    <div class="worker-meta">
+                        <h4>Bhola Nath</h4>
+                        <div class="job">🧱 Mason — राजमिस्त्री</div>
+                    </div>
+                </div>
+                <div class="worker-body">
+                    <div class="worker-tags">
+                        <span class="tag">Brick Work</span>
+                        <span class="tag">Plastering</span>
+                        <span class="tag">Foundation</span>
+                    </div>
+                    <div class="worker-info">
+                        <span class="rating">⭐ 4.9 (310 jobs)</span>
+                        <span class="price">₹500<span>/घंटा</span></span>
+                    </div>
+                    <div class="worker-location">📍 Nayagaon, khagaria, Bihar</div>
+                    <button class="btn-hire" onclick="openBookModal('Bhola Nath','Mason','500')">अभी बुक करें — Book
+                        Now</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how">
+        <div class="section-title fade-in">
+            <h2>कैसे काम करता है? — How It Works</h2>
+            <p>केवल 3 आसान चरणों में सेवा बुक करें</p>
+        </div>
+        <div class="steps">
+            <div class="step fade-in">
+                <div class="step-num">1</div>
+                <h4>सेवा चुनें</h4>
+                <p>अपनी जरूरत के हिसाब से प्लम्बर, बढ़ई, इलेक्ट्रीशियन आदि चुनें।</p>
+            </div>
+            <div class="step fade-in">
+                <div class="step-num">2</div>
+                <h4>कारीगर बुक करें</h4>
+                <p>अपना समय और पता डालें। ऑनलाइन या Cash में भुगतान करें।</p>
+            </div>
+            <div class="step fade-in">
+                <div class="step-num">3</div>
+                <h4>सेवा पाएं</h4>
+                <p>कारीगर आपके घर आएगा और काम पूरा होने के बाद रेटिंग दें।</p>
+            </div>
+            <div class="step fade-in">
+                <div class="step-num">4</div>
+                <h4>रेटिंग दें</h4>
+                <p>काम की गुणवत्ता के आधार पर रेटिंग दें और दूसरों की मदद करें।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- REGISTER SECTION -->
+    <div class="register-section">
+        <h2>आज ही जुड़ें — Join Kaushaal Saathi</h2>
+        <p>चाहे आप कारीगर हों या सेवा चाहते हों — सबके लिए जगह है!</p>
+        <div class="register-cards">
+            <div class="reg-card" onclick="openRegisterModal('worker')">
+                <div class="ico">👷</div>
+                <h3>कारीगर के रूप में</h3>
+                <p>अपनी कुशलता से कमाई करें। प्रोफाइल बनाएं और काम पाएं।</p>
+                <button class="btn-primary" style="width:100%">Register as Worker</button>
+            </div>
+            <div class="reg-card" onclick="openRegisterModal('customer')">
+                <div class="ico">🏠</div>
+                <h3>ग्राहक के रूप में</h3>
+                <p>भरोसेमंद कारीगर खोजें। घर बैठे बुकिंग करें। आसानी से भुगतान करें।</p>
+                <button class="btn-primary" style="width:100%">Register as Customer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>🛠️ कौशल साथी</h3>
+                <p>ग्रामीण भारत के कारीगरों को डिजिटल पहचान दिलाने और घरों को बेहतरीन सेवा प्रदान करने का हमारा संकल्प।
+                </p>
+                <br>
+                <p>📞 Helpline: <strong style="color:#FFB3B3">1800-123-SAATHI</strong></p>
+                <p>📱 WhatsApp: <strong style="color:#FFB3B3">+91 6203713902</strong></p>
+            </div>
+            di
+            <div>
+                <h4>सेवाएं</h4>
+                <ul>
+                    <li><a href="#">Plumber</a></li>
+                    <li><a href="#">Carpenter</a></li>
+                    <li><a href="#">Electrician</a></li>
+                    <li><a href="#">Painter</a></li>
+                    <li><a href="#">Mason</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>कंपनी</h4>
+                <ul>
+                    <li><a href="#">हमारे बारे में</a></li>
+                    <li><a href="#">करियर</a></li>
+                    <li><a href="#">ब्लॉग</a></li>
+                    <li><a href="#">संपर्क करें</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>सहायता</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">शिकायत</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Kaushaal Saathi | कौशल साथी — Made with ❤️ for Rural India 🇮🇳 | All rights reserved</p>
+        </div>
+    </footer>
+
+    <!-- ============ BOOKING MODAL ============ -->
+    <div class="modal-overlay" id="bookModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>📅 सेवा बुक करें — Book Service</h3>
+                <button class="modal-close" onclick="closeModal('bookModal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="worker-summary">
+                    <div class="avatar" id="b-icon">👨‍🔧</div>
+                    <div>
+                        <h4 id="b-name">Worker Name</h4>
+                        <span id="b-job">Job Type</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>आपका नाम — Your Name *</label>
+                    <input type="text" placeholder="Adarsh Kumar" id="b-cust-name">
+                </div>
+                <div class="form-group">
+                    <label>मोबाइल नंबर — Mobile Number *</label>
+                    <input type="tel" placeholder="6203713902" maxlength="10" id="b-phone">
+                </div>
+                <div class="form-group">
+                    <label>ईमेल — Email </label>
+                    <input type="mailto" placeholder="abc@gmail.com">
+                </div>
+                <div class="form-group">
+                    <label>पता — Address *</label>
+                    <textarea rows="2" placeholder="गाँव, तहसील, जिला..." id="b-address"></textarea>
+                </div>
+                <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                    <div class="form-group">
+                        <label>तारीख — Date</label>
+                        <input type="date" id="b-date">
+                    </div>
+                    <div class="form-group">
+                        <label>घंटे — Hours</label>
+                        <select id="b-hours" onchange="updatePrice()">
+                            <option value="2">0.5 घंटे</option>
+                            <option value="4">1 घंटे</option>
+                            <option value="6">1.5 घंटे</option>
+                            <option value="2">2 घंटे</option>
+                            <option value="4">4 घंटे</option>
+                            <option value="6">6 घंटे</option>
+                            <option value="8">पूरा दिन (8h)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="price-summary">
+                    <div class="price-row"><span>दर — Rate</span><span id="p-rate">₹350/घंटा</span></div>
+                    <div class="price-row"><span>घंटे — Hours</span><span id="p-hours">2</span></div>
+                    <div class="price-row"><span>Service Fee (5%)</span><span id="p-fee">₹35</span></div>
+                    <div class="price-row total"><span>कुल — Total</span><span id="p-total">₹735</span></div>
+                </div>
+                <button class="btn-full" onclick="proceedToPayment()">💳 भुगतान करें — Pay Now</button>
+                <div style="text-align:center;margin-top:12px;font-size:13px;color:var(--gray)">Cash on delivery भी
+                    उपलब्ध है</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ PAYMENT MODAL ============ -->
+    <div class="modal-overlay" id="payModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>💳 भुगतान — Payment Gateway</h3>
+                <button class="modal-close" onclick="closeModal('payModal')">✕</button>
+            </div>
+            <div class="modal-body" id="payBody">
+                <div style="text-align:center;margin-bottom:20px;">
+                    <div style="background:var(--red-pale);border-radius:12px;padding:16px;display:inline-block;">
+                        <div style="font-size:13px;color:var(--gray);">Total Amount</div>
+                        <div style="font-size:32px;font-weight:800;color:var(--red);" id="pay-amount">₹735</div>
+                        <div style="font-size:12px;color:var(--gray);" id="pay-for">Service Booking</div>
+                    </div>
+                </div>
+
+                <div style="font-weight:700;font-size:14px;margin-bottom:12px;color:var(--text);">भुगतान का तरीका चुनें
+                    — Select Payment Method</div>
+
+                <div class="payment-methods">
+                    <div class="pay-method active" onclick="selectPay('upi',this)">
+                        <div class="pay-ico">📱</div>
+                        UPI / PhonePe
+                    </div>
+                    <div class="pay-method" onclick="selectPay('card',this)">
+                        <div class="pay-ico">💳</div>
+                        Card
+                    </div>
+                    <div class="pay-method" onclick="selectPay('netbank',this)">
+                        <div class="pay-ico">🏦</div>
+                        Net Banking
+                    </div>
+                    <div class="pay-method" onclick="selectPay('cod',this)">
+                        <div class="pay-ico">💵</div>
+                        Cash on Service
+                    </div>
+                </div>
+
+                <!-- UPI -->
+                <div class="upi-input visible" id="upi-section">
+                    <div class="form-group">
+                        <label>UPI ID / VPA *</label>
+                        <input type="text" placeholder="yourname@paytm / @phonepe / @upi" id="upi-id">
+                    </div>
+                    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;">
+                        <span onclick="setUPI('paytm')"
+                            style="background:var(--red-pale);color:var(--red);padding:6px 12px;border-radius:8px;font-size:12px;cursor:pointer;font-weight:600;">📲
+                            Paytm</span>
+                        <span onclick="setUPI('phonepe')"
+                            style="background:var(--red-pale);color:var(--red);padding:6px 12px;border-radius:8px;font-size:12px;cursor:pointer;font-weight:600;">📲
+                            PhonePe</span>
+                        <span onclick="setUPI('gpay')"
+                            style="background:var(--red-pale);color:var(--red);padding:6px 12px;border-radius:8px;font-size:12px;cursor:pointer;font-weight:600;">📲
+                            GPay</span>
+                    </div>
+                </div>
+
+                <!-- Card -->
+                <div class="card-fields" id="card-section">
+                    <div class="form-group">
+                        <label>Card Number *</label>
+                        <input type="text" placeholder="1234 5678 9012 3456" maxlength="19" id="card-num"
+                            oninput="formatCard(this)">
+                    </div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                        <div class="form-group">
+                            <label>Expiry (MM/YY)</label>
+                            <input type="text" placeholder="12/27" maxlength="5">
+                        </div>
+                        <div class="form-group">
+                            <label>CVV</label>
+                            <input type="password" placeholder="•••" maxlength="3">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Cardholder Name</label>
+                        <input type="text" placeholder="Ram Kumar">
+                    </div>
+                </div>
+
+                <!-- Net banking -->
+                <div id="netbank-section" style="display:none;">
+                    <div class="form-group">
+                        <label>बैंक चुनें — Select Bank</label>
+                        <select>
+                            <option>State Bank of India (SBI)</option>
+                            <option>Punjab National Bank</option>
+                            <option>Bank of Baroda</option>
+                            <option>Grameen Bank</option>
+                            <option>India Post Payments Bank</option>
+                            <option>Canara Bank</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- COD -->
+                <div id="cod-section"
+                    style="display:none;background:var(--cream);border-radius:12px;padding:16px;margin-bottom:16px;text-align:center;">
+                    <div style="font-size:36px;margin-bottom:8px;">💵</div>
+                    <div style="font-weight:700;color:var(--text);">Cash on Service</div>
+                    <div style="font-size:13px;color:var(--gray);margin-top:6px;">कारीगर के काम पूरा होने पर नकद भुगतान
+                        करें।<br>No advance required.</div>
+                </div>
+
+                <button class="btn-full" id="pay-btn" onclick="processPayment()">🔒 Secure Payment — भुगतान पूरा
+                    करें</button>
+                <div style="text-align:center;margin-top:12px;font-size:12px;color:var(--gray);">🔒 256-bit SSL
+                    Encrypted | PCI DSS Compliant</div>
+            </div>
+
+            <!-- SUCCESS STATE -->
+            <div class="success-state" id="paySuccess">
+                <div class="success-ico">✅</div>
+                <h3>बुकिंग सफल! — Booking Confirmed!</h3>
+                <p style="color:var(--red);font-weight:700;font-size:18px;" id="success-booking-id">Booking ID:
+                    KS-2024-8821</p>
+                <p>आपका कारीगर निर्धारित समय पर पहुंचेगा।</p>
+                <p>The worker will arrive at your location as scheduled.</p>
+                <br>
+                <div style="background:var(--cream);border-radius:12px;padding:16px;margin-bottom:20px;">
+                    <div style="font-size:13px;color:var(--gray);margin-bottom:4px;">Contact Worker On</div>
+                    <div style="font-size:18px;font-weight:700;color:var(--red);">📞 98765-XXXXX</div>
+                </div>
+                <button class="btn-full" onclick="closeModal('payModal');closeModal('bookModal')">🏠 घर जाएं — Go
+                    Home</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ REGISTER MODAL ============ -->
+    <div class="modal-overlay" id="registerModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>📝 रजिस्टर करें — Register</h3>
+                <button class="modal-close" onclick="closeModal('registerModal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="reg-tabs">
+                    <button class="reg-tab active" id="tab-cust" onclick="switchRegTab('customer')">🏠 Customer</button>
+                    <button class="reg-tab" id="tab-work" onclick="switchRegTab('worker')">👷 Worker / कारीगर</button>
+                </div>
+
+                <div id="customer-form">
+                    <div class="form-group">
+                        <label>पूरा नाम — Full Name *</label>
+                        <input type="text" placeholder="राम कुमार सिंह">
+                    </div>
+                    <div class="form-group">
+                        <label>मोबाइल — Mobile *</label>
+                        <input type="tel" placeholder="9876543210" maxlength="10">
+                    </div>
+                    <div class="form-group">
+                        <label>गाँव / जिला — Village / District *</label>
+                        <input type="text" placeholder="रामपुर, सीतापुर, UP">
+                    </div>
+                    <div class="form-group">
+                        <label>Password *</label>
+                        <input type="password" placeholder="••••••••">
+                    </div>
+                    <button class="btn-full" onclick="registerSuccess()">✅ Register as Customer</button>
+                </div>
+
+                <div id="worker-form" style="display:none;">
+                    <div class="form-group">
+                        <label>पूरा नाम — Full Name *</label>
+                        <input type="text" placeholder="सुरेश मिस्त्री">
+                    </div>
+                    <div class="form-group">
+                        <label>मोबाइल — Mobile *</label>
+                        <input type="tel" placeholder="9876543210" maxlength="10">
+                    </div>
+                    <div class="form-group">
+                        <label>कौशल — Your Skill *</label>
+                        <select>
+                            <option>Plumber — प्लम्बर</option>
+                            <option>Carpenter — बढ़ई</option>
+                            <option>Electrician — इलेक्ट्रीशियन</option>
+                            <option>Painter — पेंटर</option>
+                            <option>Mason — राजमिस्त्री</option>
+                            <option>House Help — घरेलू सहायक</option>
+                            <option>Farm Help — खेत मजदूर</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>अनुभव — Experience (years)</label>
+                        <input type="number" placeholder="5" min="0" max="50">
+                    </div>
+                    <div class="form-group">
+                        <label>गाँव / जिला — Village / District *</label>
+                        <input type="text" placeholder="खैरा ग्राम, बाराबंकी, UP">
+                    </div>
+                    <div class="form-group">
+                        <label>Aadhar Number (for verification)</label>
+                        <input type="text" placeholder="XXXX XXXX XXXX" maxlength="14">
+                    </div>
+                    <div class="form-group">
+                        <label>Password *</label>
+                        <input type="password" placeholder="••••••••">
+                    </div>
+                    <button class="btn-full" onclick="registerSuccess()">✅ Register as Worker</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SUCCESS REGISTER MODAL -->
+    <div class="modal-overlay" id="regSuccessModal">
+        <div class="modal" style="max-width:360px;">
+            <div class="modal-body" style="text-align:center;padding:40px 28px;">
+                <div style="font-size:60px;margin-bottom:16px;">🎉</div>
+                <h3 style="font-family:'Yatra One',cursive;color:var(--red);font-size:24px;margin-bottom:10px;">स्वागत
+                    है!</h3>
+                <p style="color:var(--gray);margin-bottom:20px;">Registration successful! Welcome to Kaushaal Saathi
+                    परिवार.</p>
+                <button class="btn-full" onclick="closeModal('regSuccessModal')">शुरू करें — Get Started</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ---- MODAL CONTROLS ----
+        let currentRate = 350;
+
+        function openBookModal(name, job, rate) {
+            currentRate = parseInt(rate);
+            document.getElementById('b-name').textContent = name;
+            document.getElementById('b-job').textContent = job;
+            document.getElementById('p-rate').textContent = '₹' + rate + '/घंटा';
+            const icons = { Plumber: '👨‍🔧', Carpenter: '👨‍🏭', 'House Help': '👩‍🔧', Electrician: '👨‍🔦', Painter: '👨‍🎨', Mason: '👨‍⚕️' };
+            document.getElementById('b-icon').textContent = icons[job] || '👷';
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('b-date').value = today;
+            updatePrice();
+            document.getElementById('bookModal').classList.add('active');
+        }
+
+        function updatePrice() {
+            const hours = parseInt(document.getElementById('b-hours').value);
+            const subtotal = currentRate * hours;
+            const fee = Math.round(subtotal * 0.05);
+            const total = subtotal + fee;
+            document.getElementById('p-hours').textContent = hours;
+            document.getElementById('p-fee').textContent = '₹' + fee;
+            document.getElementById('p-total').textContent = '₹' + total;
+        }
+
+        function proceedToPayment() {
+            const name = document.getElementById('b-cust-name').value;
+            const phone = document.getElementById('b-phone').value;
+            const address = document.getElementById('b-address').value;
+            if (!name || !phone || !address) {
+                alert('कृपया सभी जानकारी भरें — Please fill all required fields');
+                return;
+            }
+            const total = document.getElementById('p-total').textContent;
+            document.getElementById('pay-amount').textContent = total;
+            document.getElementById('pay-for').textContent = 'Booking for ' + document.getElementById('b-name').textContent;
+            document.getElementById('payBody').style.display = 'block';
+            document.getElementById('paySuccess').style.display = 'none';
+            document.getElementById('paySuccess').classList.remove('visible');
+            document.getElementById('payModal').classList.add('active');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        // Payment method selection
+        let currentPayMethod = 'upi';
+
+        function selectPay(method, el) {
+            currentPayMethod = method;
+            document.querySelectorAll('.pay-method').forEach(m => m.classList.remove('active'));
+            el.classList.add('active');
+            document.getElementById('upi-section').classList.remove('visible');
+            document.getElementById('card-section').classList.remove('visible');
+            document.getElementById('netbank-section').style.display = 'none';
+            document.getElementById('cod-section').style.display = 'none';
+            if (method === 'upi') document.getElementById('upi-section').classList.add('visible');
+            else if (method === 'card') document.getElementById('card-section').classList.add('visible');
+            else if (method === 'netbank') document.getElementById('netbank-section').style.display = 'block';
+            else if (method === 'cod') document.getElementById('cod-section').style.display = 'block';
+            const btn = document.getElementById('pay-btn');
+            btn.textContent = method === 'cod' ? '✅ Confirm Cash Booking' : '🔒 Secure Payment — भुगतान पूरा करें';
+        }
+
+        function setUPI(type) {
+            const map = { paytm: '@paytm', phonepe: '@ybl', gpay: '@okaxis' };
+            document.getElementById('upi-id').value = 'user' + map[type];
+        }
+
+        function formatCard(el) {
+            let v = el.value.replace(/\D/g, '').substring(0, 16);
+            el.value = v.replace(/(.{4})/g, '$1 ').trim();
+        }
+
+        function processPayment() {
+            const btn = document.getElementById('pay-btn');
+            const original = btn.textContent;
+            btn.textContent = '⏳ Processing...';
+            btn.disabled = true;
+            setTimeout(() => {
+                const bookId = 'KS-' + new Date().getFullYear() + '-' + Math.floor(1000 + Math.random() * 9000);
+                document.getElementById('success-booking-id').textContent = 'Booking ID: ' + bookId;
+                document.getElementById('payBody').style.display = 'none';
+                document.getElementById('paySuccess').style.display = 'block';
+                document.getElementById('paySuccess').classList.add('visible');
+                btn.disabled = false;
+                btn.textContent = original;
+            }, 2000);
+        }
+
+        // Register Modal
+        function openRegisterModal(type = 'customer') {
+            switchRegTab(type);
+            document.getElementById('registerModal').classList.add('active');
+        }
+
+        function switchRegTab(type) {
+            document.getElementById('customer-form').style.display = type === 'customer' ? 'block' : 'none';
+            document.getElementById('worker-form').style.display = type === 'worker' ? 'block' : 'none';
+            document.getElementById('tab-cust').classList.toggle('active', type === 'customer');
+            document.getElementById('tab-work').classList.toggle('active', type === 'worker');
+        }
+
+        function registerSuccess() {
+            closeModal('registerModal');
+            document.getElementById('regSuccessModal').classList.add('active');
+        }
+
+        // Close on overlay click
+        document.querySelectorAll('.modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', function (e) {
+                if (e.target === this) this.classList.remove('active');
+            });
+        });
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    observer.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Set min date for booking
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date().toISOString().split('T')[0];
+            if (document.getElementById('b-date')) {
+                document.getElementById('b-date').min = today;
+            }
+        });
+    </script>
+</body>
+
+</html>
