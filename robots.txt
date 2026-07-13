@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kaushalsathi.netlify.app/sitemap.xml
